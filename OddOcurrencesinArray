@@ -1,0 +1,14 @@
+def solution(A):
+    alojador1 = {}
+    alojador1 = set()
+
+    if len(A) == 1:
+        return A
+
+    for element in A:
+        if element in alojador1:
+            alojador1.discard(element)
+        elif element not in alojador1:
+            alojador1.add(element)
+    value_ = list(alojador1)
+    return value_[0]
