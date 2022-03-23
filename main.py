@@ -39,22 +39,17 @@ X ≤ Y.
 ##########################################################################################################################################################
 
 """
-def solution (X, Y, D= 30):
-    OneJump = 1
+def solution (X, Y, D):
     distance = Y-X
     howManyJumps= distance/D
 
     if X > Y:
         return "Your are already in the place!"
-    if X and Y not in range (1,1000000000):
-        return "Your are not that guy pal, trust me"
+    if X and Y not in range (1,1000000001):
+        return "Out of range"
 
-    if howManyJumps % OneJump == 0: #you did the jumps that you need for travel from X to Y
-        return "The frog must do {0} jumps as min for travel {1} meters".format(round(howManyJumps), distance)
-    if howManyJumps % OneJump != 0: # you didn't do the jumps that you need for reaching Y
-        return "The frog must do {0} jumps as min for travel {1} meters".format(round(howManyJumps + OneJump), distance) #so you add +OneJump to arrive Y
+    if howManyJumps % 1 == 0:
+        return int(howManyJumps)
+    if howManyJumps % 1 != 0:
+        return int(howManyJumps) + 1
 
-print(solution(10, 1000))
-print(solution(1, 100000000000000000000))
-print(solution(20000000, 212192))
-print(solution(11, 190))
